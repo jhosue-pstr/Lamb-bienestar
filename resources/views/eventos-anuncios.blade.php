@@ -34,8 +34,8 @@
                         <div class="flex items-center mb-6">
                             <!-- Contenedor del cuadro blanco con margen adicional a la derecha -->
                             <div class="w-5/12 p-4 ml-4 bg-white border border-gray-200 rounded-lg shadow-md" style="margin-right: 20px;">
-                                <h3 class="text-lg font-bold text-gray-800">Enero</h3>
-                                <p class="text-gray-600">Información del evento en enero...</p>
+                                <h3 class="text-lg font-bold text-gray-800">Noviembre 14/11/2024</h3>
+                                <p class="text-gray-600">Jornada Cientifica de estudiantes</p>
                             </div>
 
                             <!-- Contenedor de la bolita verde ajustada al centro de la línea gris -->
@@ -185,8 +185,8 @@
 
                             <!-- Contenedor del cuadro blanco alineado a la derecha con un margen a la izquierda-->
                             <div class="w-5/12 p-4 bg-white border border-gray-200 rounded-lg shadow-md" style="margin-left: 60px;">
-                                <h3 class="text-lg font-bold text-gray-800">brero</h3>
-                                <p class="text-gray-600">Información del evento en febrero...</p>
+                                <h3 class="text-lg font-bold text-gray-800">Noviembre 07/11/2024 </h3>
+                                <p class="text-gray-600">Campaña de Relaciones Toxicas </p>
                             </div>
                         </div>
 

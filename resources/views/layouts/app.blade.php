@@ -30,14 +30,10 @@
             @if (request()->is('eventos-anuncios'))
                 <header class="py-1 bg-green-700">
                     <div class="flex items-center pl-4 max-w-7xl">
-                        <img src="{{ asset('imagenes/logo1.png') }}" alt="LAMB University" class="w-auto mr-2 h-14">
+                        <img src="{{ asset('imagenes/logo1.png') }}" alt="LAMB University" class="w-auto h-16 mr-2">
                     </div>
                 </header>
-
-
-
             @endif
-
 
             @if (isset($header))
                 <header class="bg-white shadow">

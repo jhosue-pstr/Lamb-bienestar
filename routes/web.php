@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EventosAnunciosController;
+use App\Http\Controllers\InformacionController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,3 +21,5 @@ Route::middleware([
 
 
 Route::get('/eventos-anuncios', [EventosAnunciosController::class, 'index'])->name('eventos-anuncios');
+
+Route::get('/mas-informacion', [InformacionController::class, 'index'])->name('mas-informacion');
