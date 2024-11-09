@@ -20,21 +20,33 @@
 <body class="font-sans antialiased">
     <x-banner />
 
-    <div class="min-h-screen bg-gray-100 flex">
-        @livewire('navigation-menu') <!-- Barra de navegación aquí -->
+    <div class="flex min-h-screen bg-gray-100">
+        <!-- Menú de Navegación Lateral -->
+        @livewire('navigation-menu')
 
-        <!-- Contenedor para el contenido principal -->
+        <!-- Contenedor Principal -->
         <div class="flex-1">
-            <!-- Page Heading -->
+            <!-- Barra Verde Superior con Logotipo y Texto Ajustado a la Izquierda -->
+            @if (request()->is('eventos-anuncios'))
+                <header class="py-1 bg-green-700">
+                    <div class="flex items-center pl-4 max-w-7xl">
+                        <img src="{{ asset('imagenes/logo1.png') }}" alt="LAMB University" class="w-auto mr-2 h-14">
+                    </div>
+                </header>
+
+
+
+            @endif
+
+
             @if (isset($header))
                 <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
                 </header>
             @endif
 
-            <!-- Page Content -->
             <main>
                 {{ $slot }}
             </main>
@@ -46,3 +58,4 @@
     @livewireScripts
 </body>
 </html>
+
