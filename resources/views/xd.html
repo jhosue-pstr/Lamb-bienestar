@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lamb-Bienestar</title>
+    <style>
+        body {
+            background-image: url(imagenes/image.png);;
+            background-size: cover;
+            color: #2a812aef;
+        }
+        .welcome-text {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-left: 30%;
+        }
+        .typing-effect {
+            font-size: 2rem;
+            border-right: 2px solid #343a40;
+            white-space: nowrap;
+            overflow: hidden;
+            margin-left: 30%;
+        }
+        .container {
+            padding-top: 15%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container text-center">
+        <h1 class="welcome-text">Bienvenido</h1>
+        <p class="typing-effect" id="typed-text"></p>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-L8ANVTpHDFe78umUBrfDgfWcvsHUpCPicT9tQ5ZFTs0Pp1cF6I1n9pFvFMtbFEP6" crossorigin="anonymous"></script>
+    <script>
+        const text = "A tu Lamb-Bienestar.";
+        const typingSpeed = 100;
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                document.getElementById("typed-text").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, typingSpeed);
+            }
+        }
+
+        window.addEventListener('load', () => {
+            type();
+        });
+    </script>
+
+
+
+</body>
+</html>
