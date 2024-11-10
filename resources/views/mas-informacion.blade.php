@@ -326,7 +326,7 @@ function mostrarMensaje(mensaje) {
         mensajeContainer.classList.add('hidden');
         mascota.classList.remove('animate-pulse');
         mensajeContainer.classList.remove('animate-bounce');
-    }, 5000);
+    }, 10000);
 }
 
 // Inicia el intervalo para obtener recordatorios cada 10 segundos

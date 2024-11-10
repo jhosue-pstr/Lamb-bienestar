@@ -32,3 +32,11 @@ Route::get('/api/evento/{id}', [EventoController::class, 'getEventoById']);
 
 Route::post('/recordatorio', [RecordatorioController::class, 'store']);
 Route::get('/api/recordatorio', [RecordatorioController::class, 'getLatest']);
+
+Route::get('/anuncios', function () {
+    return view('anuncios');
+})->name('anuncios');
+
+Route::get('/mas-informacion2', function () {
+    return view('mas-informacion2');
+})->name('mas-informacion2');

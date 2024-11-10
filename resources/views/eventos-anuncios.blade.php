@@ -16,7 +16,7 @@
                 </div>
                 <!-- Botón Anuncios alineado a la derecha -->
                 <div class="flex justify-end mt-0 mb-6" style="margin-left: 180px">
-                    <button onclick="window.location.href='/Anuncios'" class="py-3 text-base text-white bg-green-700 rounded px-14" style="width: 200px; font-size: 1.3rem; font-weight: bold;">
+                    <button onclick="window.location.href='/anuncios'" class="py-3 text-base text-white bg-green-700 rounded px-14" style="width: 200px; font-size: 1.3rem; font-weight: bold;">
                         <b>Anuncios</b>
                     </button>
                 </div>
