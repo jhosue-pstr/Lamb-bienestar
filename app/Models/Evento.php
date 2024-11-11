@@ -18,5 +18,6 @@ class Evento extends Model
         'fecha',
         'hora',
         'descripcion',
+        'afiche'
     ];
 }
