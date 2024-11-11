@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnuncioController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\EventosAnunciosController;
 use App\Http\Controllers\InformacionController;
@@ -42,6 +43,8 @@ Route::get('/mas-informacion2', function () {
 })->name('mas-informacion2');
 
 // Rutas para creación y gestión de eventos
+
+
 Route::middleware(['auth'])->group(function () {
     // Vista para la lista de eventos y botón para crear uno nuevo
     Route::get('/creacion-evento', [EventoController::class, 'index'])->name('creacion-evento');
@@ -62,4 +65,30 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/actualizar-evento/{id}', [EventoController::class, 'update'])->name('actualizar-evento');
 
 
+
 });
+
+// Rutas para gestión de anuncios
+Route::middleware(['auth'])->group(function () {
+    // Ruta para la vista principal de anuncios (similar a la de eventos)
+    Route::get('/creacion-anuncio', [AnuncioController::class, 'index'])->name('creacion-anuncio');
+
+    // Vista para ingresar detalles de un nuevo anuncio
+    Route::get('/creacion-anuncio-detalles', [AnuncioController::class, 'create'])->name('creacion-anuncio-detalles');
+
+    // Ruta para guardar un nuevo anuncio
+    Route::post('/guardar-anuncio', [AnuncioController::class, 'store'])->name('guardar-anuncio');
+
+    // Ruta para ver los detalles de un anuncio específico
+    Route::get('/anuncio/{id}', [AnuncioController::class, 'show'])->name('anuncio-detalle');
+
+    // Ruta para editar un anuncio
+    Route::get('/editar-anuncio/{id}', [AnuncioController::class, 'edit'])->name('editar-anuncio');
+
+    // Ruta para actualizar un anuncio
+    Route::put('/actualizar-anuncio/{id}', [AnuncioController::class, 'update'])->name('actualizar-anuncio');
+
+    // Ruta para eliminar un anuncio
+    Route::delete('/eliminar-anuncio/{id}', [AnuncioController::class, 'destroy'])->name('eliminar-anuncio');
+});
+
