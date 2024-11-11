@@ -305,6 +305,35 @@
         </div>
     </div>
 
+
+
+
+
+    <div id="mascota-container" class="absolute p-4" style="right: 10px; bottom: -30px;">
+        <!-- Imagen de la mascota -->
+        <img src="/imagenes/mascota.png" alt="Mascota" id="mascota" class="w-48 h-48 animate-move-left">
+
+        <!-- Nube de pensamiento al lado izquierdo -->
+        <div id="mensaje-mascota" class="absolute hidden p-3 transform -translate-x-full bg-green-400 rounded-lg shadow-lg -top-10 -left-20">
+            <!-- Mensaje de texto -->
+            <p id="mensaje-texto" class="text-sm font-bold text-black"></p>
+            <!-- Triángulo para la nube de pensamiento -->
+            <div class="absolute w-0 h-0 border-t-8 border-l-8 border-r-8 border-transparent border-t-green-400 -bottom-2 left-8"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Script para alternar entre rutas y carrusel automático con animación -->
     <script>
         function mostrarRuta(tipo) {
@@ -338,5 +367,101 @@
     setInterval(nextSlide, 10000);
 
     showSlide(currentSlide);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let intervalId;
+async function obtenerRecordatorio() {
+    try {
+        const response = await fetch('/api/recordatorio');
+        const recordatorio = await response.json();
+
+        if (recordatorio) {
+            const mensajeTexto = `Recordatorio:\n${recordatorio.nombre}\nFecha: ${recordatorio.fecha}\nHora: ${recordatorio.hora}`;
+            mostrarMensaje(mensajeTexto);
+        }
+    } catch (error) {
+        console.error('Error al obtener el recordatorio:', error);
+    }
+}
+
+function mostrarMensaje(mensaje) {
+    const mensajeContainer = document.getElementById('mensaje-mascota');
+    const mensajeTexto = document.getElementById('mensaje-texto');
+    const mascota = document.getElementById('mascota');
+
+    mensajeTexto.textContent = mensaje;
+    mensajeContainer.classList.remove('hidden');
+
+    // Añadir animación a la mascota
+    mascota.classList.add('animate-pulse');
+    mensajeContainer.classList.add('animate-bounce');
+
+    // Quitar la animación y ocultar el mensaje después de 5 segundos
+    setTimeout(() => {
+        mensajeContainer.classList.add('hidden');
+        mascota.classList.remove('animate-pulse');
+        mensajeContainer.classList.remove('animate-bounce');
+    }, 10000);
+}
+
+// Inicia el intervalo para obtener recordatorios cada 10 segundos
+setInterval(obtenerRecordatorio, 10000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
 </x-app-layout>
