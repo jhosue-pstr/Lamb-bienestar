@@ -25,10 +25,15 @@ Route::middleware([
 // Rutas para eventos y anuncios
 Route::get('/eventos-anuncios', [EventosAnunciosController::class, 'index'])->name('eventos-anuncios');
 Route::get('/mas-informacion', [InformacionController::class, 'index'])->name('mas-informacion');
+Route::get('/api/eventos/{tipo}', [InformacionController::class, 'getEventosByTipo']);
+Route::get('/api/evento/{id}', [InformacionController::class, 'getEventoById']);
 
 // Rutas para API de eventos
 Route::get('/api/eventos/{tipo}', [EventoController::class, 'getEventosByTipo']);
 Route::get('/api/evento/{id}', [EventoController::class, 'getEventoById']);
+
+Route::post('/api/evento/{id}', [EventoController::class, 'getDetallesEvento']);
+
 
 // Rutas para Recordatorios
 Route::post('/recordatorio', [RecordatorioController::class, 'store']);
@@ -91,4 +96,5 @@ Route::middleware(['auth'])->group(function () {
     // Ruta para eliminar un anuncio
     Route::delete('/eliminar-anuncio/{id}', [AnuncioController::class, 'destroy'])->name('eliminar-anuncio');
 });
+
 
