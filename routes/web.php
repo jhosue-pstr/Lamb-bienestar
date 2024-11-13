@@ -1,6 +1,6 @@
 <?php
 
-use App\Livewire\Admin\RoleMain; 
+use App\Livewire\Admin\RoleMain;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -12,9 +12,11 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+// routes/web.php
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth']);
+
 
     Route::get('/Roles', RoleMain::class)->name('Roles');
 });
