@@ -21,8 +21,8 @@
 
 <body class="font-sans antialiased bg-gray-100">
 
-
     <x-barra-nav />
+    
 
 
 
