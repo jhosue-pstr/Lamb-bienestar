@@ -33,7 +33,7 @@
         <div class="w-[700px] h-[750px] bg-white rounded-lg shadow-lg p-6 overflow-y-auto">
             <form id="eventForm">
                 <div class="mb-4">
-                    <label for="eventName" class="block text-sm font-medium text-gray-700">Nombre del anuncio:</label>
+                    <label for="eventName" class="block text-sm font-medium text-gray-700" style="font-size: 1.25rem; margin-top: 50px;">Nombre del anuncio:</label>
                     <select id="eventName" name="eventName" class="block w-full mt-1 border-gray-300 rounded-md" onchange="fillEventDetails()">
                         <option value="">Seleccione...</option>
                         @foreach ($anuncios as $anuncio)
@@ -43,22 +43,22 @@
                 </div>
 
                 <div class="mb-4">
-                    <label for="eventLocation" class="block text-sm font-medium text-gray-700">Lugar:</label>
+                    <label for="eventLocation" class="block text-sm font-medium text-gray-700" style="font-size: 1.25rem;">Lugar:</label>
                     <input type="text" id="eventLocation" class="block w-full mt-1 border-gray-300 rounded-md" readonly>
                 </div>
 
                 <div class="mb-4">
-                    <label for="eventDate" class="block text-sm font-medium text-gray-700">Fecha:</label>
+                    <label for="eventDate" class="block text-sm font-medium text-gray-700"style="font-size: 1.25rem;">Fecha:</label>
                     <input type="text" id="eventDate" class="block w-full mt-1 border-gray-300 rounded-md" readonly>
                 </div>
 
-                <div class="mb-4">
-                    <label for="eventTime" class="block text-sm font-medium text-gray-700">Hora:</label>
+                <div class="mb-2">
+                    <label for="eventTime" class="block text-sm font-medium text-gray-700"style="font-size: 1.25rem;">Hora:</label>
                     <input type="text" id="eventTime" class="block w-full mt-1 border-gray-300 rounded-md" readonly>
                 </div>
 
-                <div class="mb-4">
-                    <label for="eventDescription" class="block text-sm font-medium text-gray-700">Descripción:</label>
+                <div class="mb-2">
+                    <label for="eventDescription" class="block text-sm font-medium text-gray-700"style="font-size: 1.25rem;">Descripción:</label>
                     <textarea id="eventDescription" class="block w-full mt-1 border-gray-300 rounded-md" rows="3" readonly></textarea>
                 </div>
             </form>
@@ -105,7 +105,10 @@ async function loadEventOptions() {
                 }
             }
         }
-        async function fillEventDetails() {
+
+
+
+async function fillEventDetails() {
     const eventId = document.getElementById("eventName").value;
     if (eventId) {
         try {

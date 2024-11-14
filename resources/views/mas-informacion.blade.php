@@ -49,7 +49,7 @@
         <div class="w-[700px] h-[750px] bg-white rounded-lg shadow-lg p-6 overflow-y-auto">
             <form id="eventForm">
                 <div class="mb-4">
-                    <label for="eventType" class="block text-sm font-medium text-gray-700">Dirigido a:</label>
+                    <label for="eventType" class="block text-sm font-medium text-gray-700" style="margin-top: 30px; font-size: 1.25rem;">Dirigido a:</label>
                     <select id="eventType" name="eventType" class="block w-full mt-1 border-gray-300 rounded-md" onchange="loadEventOptions()">
                         <option value="">Seleccione...</option>
                         <option value="todos">Evento General</option>
@@ -58,29 +58,29 @@
                 </div>
 
                 <div class="mb-4">
-                    <label for="eventName" class="block text-sm font-medium text-gray-700">Nombre del evento:</label>
+                    <label for="eventName" class="block text-sm font-medium text-gray-700" style="font-size: 1.25rem;">Nombre del evento:</label>
                     <select id="eventName" name="eventName" class="block w-full mt-1 border-gray-300 rounded-md" disabled onchange="fillEventDetails()">
                         <option value="">Seleccione...</option>
                     </select>
                 </div>
 
                 <div class="mb-4">
-                    <label for="eventLocation" class="block text-sm font-medium text-gray-700">Lugar:</label>
+                    <label for="eventLocation" class="block text-sm font-medium text-gray-700"style="font-size: 1.25rem;">Lugar:</label>
                     <input type="text" id="eventLocation" class="block w-full mt-1 border-gray-300 rounded-md" readonly>
                 </div>
 
                 <div class="mb-4">
-                    <label for="eventDate" class="block text-sm font-medium text-gray-700">Fecha:</label>
+                    <label for="eventDate" class="block text-sm font-medium text-gray-700"style="font-size: 1.25rem;">Fecha:</label>
                     <input type="text" id="eventDate" class="block w-full mt-1 border-gray-300 rounded-md" readonly>
                 </div>
 
                 <div class="mb-4">
-                    <label for="eventTime" class="block text-sm font-medium text-gray-700">Hora:</label>
+                    <label for="eventTime" class="block text-sm font-medium text-gray-700"style="font-size: 1.25rem;">Hora:</label>
                     <input type="text" id="eventTime" class="block w-full mt-1 border-gray-300 rounded-md" readonly>
                 </div>
 
                 <div class="mb-4">
-                    <label for="eventDescription" class="block text-sm font-medium text-gray-700">Descripción:</label>
+                    <label for="eventDescription" class="block text-sm font-medium text-gray-700"style="font-size: 1.25rem;">Descripción:</label>
                     <textarea id="eventDescription" class="block w-full mt-1 border-gray-300 rounded-md" rows="3" readonly></textarea>
                 </div>
 
@@ -125,26 +125,26 @@
 
 
     <script>
-async function loadEventOptions() {
-            const eventType = document.getElementById("eventType").value;
-            const eventNameSelect = document.getElementById("eventName");
-            eventNameSelect.innerHTML = '<option value="">Seleccione...</option>';
-            eventNameSelect.disabled = true;
+        async function loadEventOptions() {
+                    const eventType = document.getElementById("eventType").value;
+                    const eventNameSelect = document.getElementById("eventName");
+                    eventNameSelect.innerHTML = '<option value="">Seleccione...</option>';
+                    eventNameSelect.disabled = true;
 
-            if (eventType) {
-                const response = await fetch(`/api/eventos/${eventType}`);
-                const eventsData = await response.json();
-                if (eventsData.length > 0) {
-                    eventsData.forEach(event => {
-                        const option = document.createElement("option");
-                        option.value = event.id;
-                        option.textContent = event.nombre;
-                        eventNameSelect.appendChild(option);
-                    });
-                    eventNameSelect.disabled = false;
+                    if (eventType) {
+                        const response = await fetch(`/api/eventos/${eventType}`);
+                        const eventsData = await response.json();
+                        if (eventsData.length > 0) {
+                            eventsData.forEach(event => {
+                                const option = document.createElement("option");
+                                option.value = event.id;
+                                option.textContent = event.nombre;
+                                eventNameSelect.appendChild(option);
+                            });
+                            eventNameSelect.disabled = false;
+                        }
+                    }
                 }
-            }
-        }
 
         async function fillEventDetails() {
             const eventId = document.getElementById("eventName").value;

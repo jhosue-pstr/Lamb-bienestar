@@ -35,13 +35,46 @@
     </div>
 
     <!-- Aquí insertamos la sección de "Eventos y Anuncios" debajo del carrusel -->
-    <div class="p-4 bg-blue-400 shadow rounded mt-6 flex flex-col items-center justify-center">
-        <a href="{{ route('eventos-anuncios') }}" target="_blank" class="text-2xl font-semibold mb-2 text-black-500 hover:underline">
+    <div class="flex flex-col items-center justify-center p-4 mt-6 bg-blue-400 rounded shadow">
+        <a href="{{ route('eventos-anuncios') }}" target="_blank" class="mb-2 text-2xl font-semibold text-black-500 hover:underline">
             Ver más
         </a>
     </div>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <script>
     let currentIndex = 1;
