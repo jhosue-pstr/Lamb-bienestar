@@ -8,6 +8,30 @@ use Illuminate\Support\Facades\Storage;
 
 class AnuncioController extends Controller
 {
+
+    public function getAnuncioJson($id)
+{
+    $anuncio = Anuncio::findOrFail($id);
+    return response()->json($anuncio);
+}
+
+    public function masInformacion2()
+    {
+        // Obtener todos los anuncios
+        $anuncios = Anuncio::all();
+
+        // Pasar los anuncios a la vista 'mas-informacion2'
+        return view('mas-informacion2', compact('anuncios'));
+    }
+
+    public function anuncios()
+    {
+        // Obtener todos los anuncios en orden de más reciente a más antiguo
+        $anuncios = Anuncio::orderBy('created_at', 'desc')->get();
+
+        // Pasar los anuncios a la vista 'anuncios'
+        return view('anuncios', compact('anuncios'));
+    }
     // Método para mostrar la vista de "creacion-anuncio" con todos los anuncios
     public function index()
     {
@@ -61,6 +85,7 @@ class AnuncioController extends Controller
     {
         $anuncio = Anuncio::findOrFail($id);
         return view('anuncio-detalle', compact('anuncio'));
+
     }
 
     // Método para eliminar un anuncio
@@ -127,3 +152,4 @@ class AnuncioController extends Controller
         return redirect()->route('creacion-anuncio')->with('success', 'Anuncio actualizado exitosamente.');
     }
 }
+

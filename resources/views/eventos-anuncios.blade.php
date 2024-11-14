@@ -263,8 +263,6 @@
                         </div>
 
 
-
-
                         <!-- 6 -->
                         <div class="flex items-center mb-6">
                             <!-- Espacio vacío a la izquierda -->
@@ -321,7 +319,7 @@
 
     <div id="mascota-container" class="absolute p-4" style="right: 10px; bottom: -30px;">
         <!-- Imagen de la mascota -->
-        <img src="/imagenes/mascota.png" alt="Mascota" id="mascota" class="w-48 h-48 animate-move-left">
+        <img src="/imagenes/mascota2.png" alt="Mascota" id="mascota" class="w-48 h-48 animate-move-left">
 
         <!-- Nube de pensamiento al lado izquierdo -->
         <div id="mensaje-mascota" class="absolute hidden p-3 transform -translate-x-full bg-green-400 rounded-lg shadow-lg -top-10 -left-20">

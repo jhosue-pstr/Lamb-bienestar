@@ -31,13 +31,14 @@ Route::get('/api/evento/{id}', [InformacionController::class, 'getEventoById']);
 // Rutas para API de eventos
 Route::get('/api/eventos/{tipo}', [EventoController::class, 'getEventosByTipo']);
 Route::get('/api/evento/{id}', [EventoController::class, 'getEventoById']);
-
 Route::post('/api/evento/{id}', [EventoController::class, 'getDetallesEvento']);
 
 
-// Rutas para Recordatorios
+// Rutas para RecordatoriosRoute::get('/api/anuncio/{id}', [AnuncioController::class, 'show']);
+
 Route::post('/recordatorio', [RecordatorioController::class, 'store']);
 Route::get('/api/recordatorio', [RecordatorioController::class, 'getLatest']);
+Route::get('/api/anuncio-json/{id}', [AnuncioController::class, 'getAnuncioJson']);
 
 // Vistas estáticas
 Route::get('/anuncios', function () {
@@ -48,6 +49,12 @@ Route::get('/mas-informacion2', function () {
 })->name('mas-informacion2');
 
 // Rutas para creación y gestión de eventos
+Route::get('/anuncios', [AnuncioController::class, 'anuncios'])->name('anuncios.index');
+
+
+Route::get('/api/anuncio/{id}', [AnuncioController::class, 'show']);
+Route::get('/mas-informacion2', [AnuncioController::class, 'masInformacion2'])->name('mas-informacion2');
+
 
 
 Route::middleware(['auth'])->group(function () {
